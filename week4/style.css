@@ -1,0 +1,97 @@
+body {
+	margin: 2em;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+header, nav, aside, article, footer {
+	border: 2px solid red;
+}
+
+header {
+	background-color: #fdf6ce;
+}
+
+nav {
+	background-color: #ffdae5;
+}
+
+aside {
+	background-color: #ddd7d7;
+}
+
+article {
+	background-color: #d7eaf8;
+}
+
+footer {
+	background-color: #dcfff6;
+}
+
+header, footer {
+	padding: 0.5rem 1rem;
+	margin: 5px 10px;
+}
+
+article, aside {
+	padding: 0.8rem;
+	border-width: 10px;
+}
+
+.byline {
+	font-style: italic;
+}
+
+.more-link {
+	font-weight: bold;
+}
+
+td, th {
+	padding: 0.2rem;
+	border: 3px solid orange;
+}
+
+table {
+	border: 5px solid yellowgreen;
+	border-collapse: collapse;
+}
+
+thead th {
+	background-color: rgba(124, 81, 255, 0.7);
+}
+
+.mugshot {
+	max-width: 50%;
+	min-width: 20%;
+	float: right;
+	margin-left: 0.3rem;
+	margin-bottom: 0.1rem;
+}
+
+main {
+	display: flex;
+}
+
+#page-menu > ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: space-around;
+	justify-content: space-around;
+}
+
+#page-menu > ul > li {
+	list-style: none;
+}
+
+#page-footer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+	align-content: space-around;
+	justify-content: space-around;
+}
+
+#page-footer > * {
+	width: 50%;
+}

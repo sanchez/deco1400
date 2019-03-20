@@ -1,0 +1,45 @@
+#front-screen, #opening {
+    background-color: lightgoldenrodyellow;
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 40%;
+}
+
+#opening {
+    background-image: url("../images/opening.jpg");
+}
+
+#front-screen {
+    background-image: url("../images/cover.jpg");
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0rem !important;
+}
+
+.floater {
+    background-color: rgba(255, 244, 227, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 20px rgba(255, 244, 227, 0.8);
+}
+
+footer {
+    padding: 2rem;
+    background-color: var(--primary);
+    color: var(--primary-text);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+footer a {
+    color: var(--primary-text);
+}
+
+footer a.right {
+    flex-shrink: 0;
+}
