@@ -1,4 +1,4 @@
-#front-screen, #opening {
+#front-screen, #opening, #adding, #branching, #checkout, #ending {
     background-color: lightgoldenrodyellow;
     background-color: var(--background-color);
     background-repeat: no-repeat;
@@ -8,6 +8,22 @@
 
 #opening {
     background-image: url("../images/opening.jpg");
+}
+
+#adding {
+    background-image: url("../images/adding.jpg");
+}
+
+#branching {
+    background-image: url("../images/branch.jpg");
+}
+
+#checkout {
+    background-image: url("../images/deadend.jpg");
+}
+
+#ending {
+    background-image: url("../images/ending.jpg");
 }
 
 #front-screen {
