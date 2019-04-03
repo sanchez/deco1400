@@ -30,6 +30,12 @@
                 <a href="#beginning">Beginning</a>
                 <a href="#opening">Getting Started</a>
                 <a href="#adding">Tracking</a>
+                <a href="#publishing">Updates</a>
+                <a href="#branching">Branching</a>
+                <a href="#checkout">Moving Branches</a>
+                <a href="#merging">Merging</a>
+                <a href="#log">History</a>
+                <a href="#ending">Finale</a>
             </div>
         </div>
 
@@ -159,7 +165,7 @@
                 <div class="innerPage">
                     <div class="card">
                         <div class="heading">A Branch in the Path</div>
-                        <div class="context">
+                        <div class="content">
                             Indiana had been progressing very smoothly through the tunnels so far, however he had arrived at his first problem. The tunnel branched off in two directions, but he was unsure if he should continue ahead and ignore the path off to the side. Or see where the side path went to. Indiana decided to explore the path down the side, but he also wanted to correctly document his movements. So he ran the following command:
 
                             <blockquote>
@@ -174,7 +180,7 @@
 
                     <div class="card">
                         <div class="heading">What is the importance of Branching</div>
-                        <div class="context">
+                        <div class="content">
                             Branching is important in version control because it allows for multiple developers to easily develop on different features and not interupt each others development time. Branching can also be used mark different features being developed and mark different stages of the program.
                         </div>
                     </div>
@@ -185,10 +191,67 @@
                 <div class="innerPage">
                     <div class="card">
                         <div class="heading">Moving between Branches</div>
-                        <div class="context">
+                        <div class="content">
+                            Indiana had been well on his way through this tunnel when he finally hit a dead end and decided he wanted to jump to another branch. He rememered that the previous branch he was working on was called master, and so he was able to jump back using the <code>checkout</code> command.
                             <blockquote>
                                 git checkout &lt;branchName&gt;
                             </blockquote>
+                            <i>Do not forget to replace &lt;branchName&gt; with your branch name!</i>
+                        </div>
+                    </div>
+                    <div class="fillOut"></div>
+                    <div class="card">
+                        <div class="heading">View Existing Branches</div>
+                        <div class="content">
+                            It can become incredibly difficult to keep track of branches and remember what exists and doesn't. Git allows you to view all the branches created and view the last commit message assocated with the branch.
+                            <blockquote>
+                                git branch -vv
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="merging">
+                <div class="innerPage">
+                    <div class="card">
+                        <div class="heading">Merging Code</div>
+                        <div class="content">
+                            Most of the time after completing work in a branch, the code needs to be "moved" into another branch. Git allows us to do this using the <code>merge</code> command.
+                            <blockquote>
+                                git merge &lt;branchName&gt;
+                            </blockquote>
+                            <i>Do not forget to replace &lt;branchName&gt; with your branch name!</i><br />
+                            
+                            Merge will attempt to copy the commit's made in <i>&lt;branchName&gt;</i> into the current checked out branch. Therefore it is common for the following series of commands to be run:
+                            <blockquote>
+                                git checkout &lt;destBranchName&gt;<br />
+                                git merge &lt;srcBranchName&gt;
+                            </blockquote>
+                            This will attempt to merge <i>&lt;destBranchName&gt;</i> into <i>&lt;srcBranchName&gt;</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="log">
+                <div class="innerPage">
+                    <div class="card">
+                        <div class="heading">Git History</div>
+                        <div class="content">
+                            After exploring the tunnels for days Indiana had started to become lost in his own work. His memory of what he had done and when was starting to slip from memory. At this point he remembered that Git stored all the commits he had made and there is one simple command for viewing the history:
+
+                            <blockquote>
+                                git log
+                            </blockquote>
+                            <i>Use the "j" and "k" letters on the keyboard to move around, when you want to exit the application press the "q" button on your keyboard</i><br />
+
+                            <p>
+                                If you would like a prettier output, the following command will produce a graph on the left hand side showing the different branching and merging stages:
+                                <blockquote>
+                                    git log --graph --decorate
+                                </blockquote>
+                            </p>
                         </div>
                     </div>
                 </div>

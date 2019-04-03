@@ -1,4 +1,4 @@
-#front-screen, #opening, #adding, #branching, #checkout, #ending {
+#front-screen, #opening, #adding, #branching, #checkout, #merging, #log, #ending {
     background-color: lightgoldenrodyellow;
     background-color: var(--background-color);
     background-repeat: no-repeat;
@@ -20,6 +20,14 @@
 
 #checkout {
     background-image: url("../images/deadend.jpg");
+}
+
+#merging {
+    background-image: url("../images/massive.jpg");
+}
+
+#log {
+    background-image: url("../images/water.jpg");
 }
 
 #ending {
