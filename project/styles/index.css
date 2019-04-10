@@ -27,35 +27,37 @@ html, body, #container {
     justify-content: space-around;
 }
 
-.consume > nav {
+nav.main {
     position: fixed;
     display: block;
-    opacity: 1;
-    transition: opacity 1s ease;
     background-color: rgba(30, 30, 30, 1);
     top: 0;
     width: 100vw;
     z-index: 10001;
     color: var(--primary);
+    font-size: 1.3rem;
 }
 
-.consume > nav > .innerNav {
+nav.main a {
+    text-decoration: none;
+    color: var(--primary);
+    border-bottom: none;
+    transition: border 0.2s;
+}
+
+nav.main a:hover {
+    border-bottom: 2px solid var(--primary);
+}
+
+nav.main > .innerNav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 1rem;
 }
 
-.consume > nav > .innerNav > .right > span {
+nav.main > .innerNav > .right > span {
     padding: 0.2rem;
-}
-
-.consume:hover > nav {
-    opacity: 0;
-}
-
-.consume > nav:hover {
-    opacity: 1;
 }
 
 .page > .innerPage {
