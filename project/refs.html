@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF8" />
+        <title>Indiana Jones and the Scroll of Lost Truthes - References</title>
+
+        <style>
+            :root {
+                --primary: #a18613;
+                --primary-text: #eee;
+                --secondary: #1975FF;
+                --background-color: #fff5e6;
+            }
+        </style>
+
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" />
+
+        <link href="styles/index.css" rel="stylesheet" />
+        <link href="styles/basic.css" rel="stylesheet" />
+        <link href="styles/panels.css" rel="stylesheet" />
+        <link href="styles/headings.css" rel="stylesheet" />
+        <link href="styles/card.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <nav class="main">
+                <div class="innerNav">
+                    <div class="left">
+                        <a href="index.html">
+                            Indiana Jones and the Scroll of Lost Truthes
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span><a href="refs.html">Reference</a></span>
+                        <span><a href="quiz.html">Quiz</a></span>
+                        <span><a href="about.html">About</a></span>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="page-spacing"></div>
+
+            <section class="card">
+                <div class="heading">Basic</div>
+                <div class="content">
+                    <table class="commands">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Usage</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Initialize Git</td>
+                                <td>init</td>
+                                <td>Intializes the current directory and all child directories to be used by git</td>
+                            </tr>
+                            <tr>
+                                <td>Clone a Repository</td>
+                                <td>clone &lt;repoURL&gt;</td>
+                                <td>Clones an existing repository into the current directory</td>
+                            </tr>
+                            <tr>
+                                <td>Add File</td>
+                                <td>add &lt;fileName&gt;</td>
+                                <td>Adds the file into the staging area for commiting</td>
+                            </tr>
+                            <tr>
+                                <td>Add All Files</td>
+                                <td>add -A</td>
+                                <td>Adds all changed files into the staging area for committing</td>
+                            </tr>
+                            <tr>
+                                <td>Commit Staged Files</td>
+                                <td>commit -m "&lt;message&gt;</td>
+                                <td>Commits all the files staged and attaches the message with that group of changes</td>
+                            </tr>
+                            <tr>
+                                <td>Create a Branch</td>
+                                <td>branch &lt;branchName&gt;</td>
+                                <td>Creates a new Branch based off of the current active branch</td>
+                            </tr>
+                            <tr>
+                                <td>Checkout to Branch</td>
+                                <td>checkout &lt;branchName&gt;</td>
+                                <td>Changes the current active branch to &lt;branchName&gt;</td>
+                            </tr>
+                            <tr>
+                                <td>Merge a Branch</td>
+                                <td>merge &lt;branchName&gt;</td>
+                                <td>Merges &lt;branchName&gt; into the current active branch</td>
+                            </tr>
+                            <tr>
+                                <td>Pull from Remote</td>
+                                <td>pull</td>
+                                <td>Pulls all remote changes into the local version and attempts to merge any out of sync changes</td>
+                            </tr>
+                            <tr>
+                                <td>Push to Remote</td>
+                                <td>push</td>
+                                <td>Pushs all local changes to the remote repository</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Advanced</div>
+                <div class="content">
+                    <table class="commands">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Usage</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Set Upstream</td>
+                                <td>push -u origin &lt;branchName&gt;</td>
+                                <td>Sets the &lt;branchName&gt; to push to the origin server and then pushs all changes up</td>
+                            </tr>
+                            <tr>
+                                <td>Show Remotes</td>
+                                <td>remote -v</td>
+                                <td>Shows all the remotes registered to be pushed and pulled from</td>
+                            </tr>
+                            <tr>
+                                <td>Add a new Remote</td>
+                                <td>remote add &lt;remoteName&gt; &lt;remoteURL&gt;</td>
+                                <td>Adds the new remote to the repository under the current name</td>
+                            </tr>
+                            <tr>
+                                <td>Set Upstream for different remote</td>
+                                <td>push -u &lt;remoteName&gt; &lt;remoteBranchName&gt;</td>
+                                <td>Sets the current branch to push to &lt;remoteName&gt;'s &lt;branchName&gt;</td>
+                            </tr>
+                            <tr>
+                                <td>View All Branches</td>
+                                <td>branch -vv</td>
+                                <td>Shows all the branches and their last commit message</td>
+                            </tr>
+                            <tr>
+                                <td>View the Log</td>
+                                <td>log</td>
+                                <td>Shows the history of the current branch</td>
+                            </tr>
+                            <tr>
+                                <td>Pretty Log Print</td>
+                                <td>log --graph --decorate</td>
+                                <td>Shows a prettier history of the current branch</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    
+    </body>
+</html>

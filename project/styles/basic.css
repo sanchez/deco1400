@@ -1,0 +1,40 @@
+section {
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#container > :not(nav) {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.commands {
+    border-collapse: collapse;
+    border: 3px solid #333;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.commands > tbody > tr > * {
+    border: 2px solid #888;
+}
+
+table.commands tr > * {
+    padding: 8px;
+}
+
+table.commands > thead > tr {
+    background-color: #000;
+    color: white;
+}
+
+table.commands > tbody > tr:nth-child(even) > td {
+    background-color: #CCC;
+}
+
+.page-spacing {
+    padding: 2rem;
+}
