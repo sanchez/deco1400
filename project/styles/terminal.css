@@ -1,0 +1,65 @@
+.terminal {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.terminal > .history {
+    padding: 0.4rem;
+    border: 2px solid #bbb;
+    min-height: 6rem;
+    font-size: 0.9rem;
+}
+
+.terminal > .input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.terminal > .input-row > .input {
+    flex-grow: 1;
+    padding: 0.4rem;
+    border: 2px solid #bbb;
+}
+
+.terminal > .input-row > .button {
+    flex-grow: 0;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary);
+    color: var(--primary-text);
+    font-weight: bold;
+    border: none;
+}
+
+.terminal > .history > .command {
+    font-style: italic;
+    background-color: #ddd;
+    padding: 0.2rem;
+}
+
+.terminal > .history > .command::before {
+    content: "$";
+    padding-right: 1rem;
+}
+
+.terminal > .history > .error, .terminal > .history > .result {
+    padding: 0.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.terminal > .history > .error {
+    background-color: #8e0202;
+    color: #ffffff;
+}
+
+.terminal > .history ul {
+    margin: 0;
+    list-style-type: '- ';
+    margin-inline-start: -0.5rem;
+    margin-inline-end: 0;
+}
