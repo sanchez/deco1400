@@ -9,6 +9,10 @@ html, body, #container {
     background-color: var(--background-color);
 }
 
+p {
+    color: black;
+}
+
 .consume, .page {
     width: 100%;
     width: 100vw;
