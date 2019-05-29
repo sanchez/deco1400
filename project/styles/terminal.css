@@ -63,3 +63,7 @@
     margin-inline-start: -0.5rem;
     margin-inline-end: 0;
 }
+
+.terminal > .history ul .active {
+    background-color: #8bf48b;
+}

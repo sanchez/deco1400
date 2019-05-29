@@ -38,3 +38,20 @@ table.commands > tbody > tr:nth-child(even) > td {
 .page-spacing {
     padding: 2rem;
 }
+
+button {
+    -webkit-appearance: none;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #ddd;
+    color: inherit;
+    transition: background-color 0.5s, color 0.5s;
+    border: 3px var(--primary) solid;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}

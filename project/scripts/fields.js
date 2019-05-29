@@ -7,8 +7,24 @@ window.registerField = function (field) {
 window.checkFields = function () {
     const failed = fields.filter(x => !x.isCorrect());
     if (failed.length >= 1) {
-        console.log("Failed");
+        const failedText = `Failed ${failed.length} out of ${fields.length} Tests`;
+        const results = document.querySelector("#results");
+        if (results) {
+            results.innerHTML = `<div class='failed'>${failedText}</div>`;
+        }
     } else {
-        console.log("Success");
+        const results = document.querySelector("#results");
+        if (results) {
+            results.innerHTML = "<div class='success'>Successfully passed all quizzes!</div>";
+        }
     }
 }
+
+const loadFields = () => {
+    const buttons = document.querySelectorAll("#checkResults");
+    buttons.forEach(x => {
+        x.onclick = window.checkFields;
+    });
+}
+
+window.addEventListener("load", loadFields);
