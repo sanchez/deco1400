@@ -15,7 +15,7 @@ window.checkFields = function () {
     } else {
         const results = document.querySelector("#results");
         if (results) {
-            results.innerHTML = "<div class='success'>Successfully passed all quizzes!</div>";
+            results.innerHTML = "<div class='success'>Successfully passed all questions!</div>";
         }
     }
 }

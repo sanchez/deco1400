@@ -4,6 +4,7 @@
     justify-content: stretch;
     align-content: stretch;
     align-items: stretch;
+    position: relative;
 }
 
 .terminal > .history {
@@ -66,4 +67,35 @@
 
 .terminal > .history ul .active {
     background-color: #8bf48b;
+}
+
+.terminal > .terminal-command-tooltip, .terminal > .terminal-output-tooltip {
+    font-size: 0.8rem;
+    position: absolute;
+    z-index: 40;
+    background-color: #eee;
+    border-radius: 10px;
+    min-height: 50px;
+    padding: 15px;
+    width: 200px;
+    left: -250px;
+}
+
+.terminal > .terminal-command-tooltip::after, .terminal > .terminal-output-tooltip::after {
+    content: " ";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -20px;
+    border-width: 20px;
+    border-color: transparent transparent transparent #eee;
+    border-style: solid;
+}
+
+.terminal > .terminal-command-tooltip {
+    bottom: -20px;
+}
+
+.terminal > .terminal-output-tooltip {
+    bottom: 80px;
 }

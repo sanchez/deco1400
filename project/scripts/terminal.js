@@ -166,8 +166,21 @@ function gitBranch(args, repo) {
     }
 
     if (args.length === 1) {
-        repo.createBranch(args[0]);
-        return `Created Branch To ${args[0]}`;
+        if (args[0].startsWith("-")) {
+            if (args[0] === "-vv") {
+                return Object.keys(repo.branches).map((x) => {
+                    if (x === repo.activeBranch) {
+                        return `<li class="active">${x} [origin/${x}]</li>`;
+                    }
+                    return `<li>${x} [origin/${x}]</li>`;
+                }).reduce((p, c) => {
+                    return p.concat(c);
+                }, `<ul>`).concat("</ul>");
+            }
+        } else {
+            repo.createBranch(args[0]);
+            return `Created Branch To ${args[0]}`;
+        }
     }
 
     throw new Error("Unsupported Arguments");
@@ -196,6 +209,9 @@ function gitMerge(args, repo) {
 }
 
 function findLookup(command, args, repo) {
+    if (command !== "init" && !repo) {
+        throw new Error("Uninitialized repository");
+    }
     switch(command) {
         case "init": return gitInit(args, repo);
         case "add": return gitAdd(args, repo);
@@ -209,6 +225,10 @@ function findLookup(command, args, repo) {
     throw new Error("Command Not Found");
 }
 
+function help(args) {
+    return `Available commands:<ul><li>git - emulates basic git commands</li><li>ls - shows the current files in the directory</li></ul>`;
+}
+
 function processCommand(command, repo) {
     const s = command.split(" ");
     if (s.length < 1) throw new Error("Invalid Command");
@@ -219,6 +239,8 @@ function processCommand(command, repo) {
             return findLookup(s[1], s.filter((x, i) => i >= 2), repo);
         case "ls":
             return files.join(", ");
+        case "help":
+            return help(s.filter((x, i) => i >= 2));
     }
     throw new Error("Commant Not Found");
 }
@@ -254,7 +276,7 @@ class TerminalInput {
 }
 
 class Terminal {
-    constructor(htmlNode) {
+    constructor(htmlNode, showTooltips) {
         this.htmlNode = htmlNode;
 
         this.history = document.createElement("div");
@@ -262,6 +284,18 @@ class Terminal {
         this.htmlNode.replaceChild(this.history, this.htmlNode.firstChild);
 
         this.input = new TerminalInput(this.htmlNode, this.handleInput.bind(this));
+
+        if (showTooltips) {
+            const outputTooltip = document.createElement("div");
+            outputTooltip.className = "terminal-output-tooltip";
+            outputTooltip.innerText = "The resulting command output will be shown here as well as the command that was run";
+            this.htmlNode.appendChild(outputTooltip);
+
+            const commandTooltip = document.createElement("div");
+            commandTooltip.className = "terminal-command-tooltip";
+            commandTooltip.innerText = "Input Git commands here and press enter to run the command";
+            this.htmlNode.appendChild(commandTooltip);
+        }
 
         this.c = undefined;
     }
@@ -331,11 +365,21 @@ const checkers = {
     }
 }
 
+const initers = {
+    "branch": function () {
+        const r = gitInit();
+        r.stageFile("hello.txt");
+        r.commit("Initial Commit");
+        return r;
+    }
+}
+
 function loadTerminals() {
     const tNodes = document.querySelectorAll(".terminal");
-    tNodes.forEach(x => {
+    tNodes.forEach((x, i) => {
         const checker = checkers[x.id];
-        const t = new Terminal(x);
+        const t = new Terminal(x, i === 0);
+        if (initers[x.id]) t.repo = initers[x.id]();
         if (checker) {
             t.checker = checker;
             window.registerField(t);

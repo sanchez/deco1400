@@ -10,7 +10,7 @@
                 --primary: #a18613;
                 --primary-text: #eee;
                 --secondary: #1975FF;
-                --background-color: #fc9c4e;
+                --background-color: #6d532d;
             }
         </style>
 
@@ -22,6 +22,7 @@
         <link href="styles/headings.css" rel="stylesheet" />
         <link href="styles/card.css" rel="stylesheet" />
         <link href="styles/terminal.css" rel="stylesheet" />
+        <link href="styles/multichoice.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -47,6 +48,67 @@
             <section class="card">
                 <div class="heading">Question 1</div>
                 <div class="content">
+                    What is Git used for?
+                    <ul class="multichoice" id="git">
+                        <li>Management and tracking of non-binary files</li>
+                        <li>Instant Messaging with my friends</li>
+                        <li>A new form of blockchain technology</li>
+                        <li>Accessing an online shoe store</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Question 2</div>
+                <div class="content">
+                    When starting a new Repository what is one of the first things you should do?
+                    <ul class="multichoice" id="start">
+                        <li><code>git log</code></li>
+                        <li>Download a Git Repository template</li>
+                        <li><code>git init</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Question 3</div>
+                <div class="content">
+                    Before commiting your changes, do you have to add the files to the staging area first?
+                    <ul class="multichoice" id="first">
+                        <li>Yes, all files associated with the change must be added</li>
+                        <li>No, that just sounds silly</li>
+                        <li>No, Git will just automatically stage all the required files</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Question 4</div>
+                <div class="content">
+                    If I want to add all the changed files, do I have to type out their name individually?
+                    <ul class="multichoice" id="add">
+                        <li>Yes</li>
+                        <li>No, you can use the "-R" flag to enable rocket mode which will add all changed files</li>
+                        <li>No, you can use the "-A" flag to add all unstaged files</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Question 5</div>
+                <div class="content">
+                    What is "<code>git push</code>" used for?
+                    <ul class="multichoice" id="push">
+                        <li>Making the solution for me</li>
+                        <li>Uploading all my local changes to a server</li>
+                        <li>Pushes the changed files into a different directory</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Question 6</div>
+                <div class="content">
                     Create a repository and a commit:
                     <div class="terminal" id="commit">
                         Please enable javascript to continue
@@ -55,12 +117,25 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 2</div>
+                <div class="heading">Question 7</div>
                 <div class="content">
-                    Create a repository and a branch with one commit
+                    Create a new branch with one commit
                     <div class="terminal" id="branch">
                         Please enable javascript to continue
                     </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="heading">Question 8</div>
+                <div class="content">
+                    What is the Git command to copy an existing repository from a server:
+                    <ul class="multichoice" id="clone">
+                        <li><code>git clone &lt;url&gt;</code></li>
+                        <li><code>sudo make me a sandwich</code></li>
+                        <li><code>git download &lt;url&gt;</code></li>
+                        <li><code>git existing &lt;url&gt;</code></li>
+                    </ul>
                 </div>
             </section>
 
@@ -76,5 +151,6 @@
 
         <script type="text/javascript" src="scripts/fields.js"></script>
         <script type="text/javascript" src="scripts/terminal.js"></script>
+        <script type="text/javascript" src="scripts/multichoice.js"></script>
     </body>
 </html>
