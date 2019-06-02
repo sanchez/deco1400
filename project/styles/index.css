@@ -3,9 +3,10 @@ html, body {
     padding: 0;
     margin: 0;
     border: none;
+    overflow-x: hidden;
 }
 
-html, body, #container {
+html, body {
     background-color: var(--background-color);
 }
 
@@ -107,6 +108,7 @@ blockquote {
 }
 
 .floatingMenu {
+    pointer-events: none;
     position: fixed;
     height: 100vh;
     z-index: 999;
@@ -145,4 +147,117 @@ blockquote {
 
 .floatingMenu a:hover {
     text-decoration: underline;
+}
+
+section {
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#container > :not(nav) {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.commands {
+    border-collapse: collapse;
+    border: 3px solid #333;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.commands > tbody > tr > * {
+    border: 2px solid #888;
+}
+
+table.commands tr > * {
+    padding: 8px;
+}
+
+table.commands > thead > tr {
+    background-color: #000;
+    color: white;
+}
+
+table.commands > tbody > tr:nth-child(even) > td {
+    background-color: #CCC;
+}
+
+.page-spacing {
+    padding: 2rem;
+}
+
+button {
+    -webkit-appearance: none;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #ddd;
+    color: inherit;
+    transition: background-color 0.5s, color 0.5s;
+    border: 3px var(--primary) solid;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+}
+
+.profile {
+    width: 150px;
+    margin-left: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
+blockquote {
+    position: relative;
+}
+
+blockquote > .hover {
+    position: absolute;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    bottom: -100%;
+    left: -20px;
+    opacity: 0;
+}
+
+@keyframes blockquotehover {
+    from {
+        opacity: 0;
+        display: none;
+    }
+    to {
+        opacity: 1;
+        display: block;
+    }
+}
+
+blockquote:hover > .hover {
+    animation: blockquotehover 0.3s ease forwards;
+}
+
+blockquote > .hover:hover {
+    display: none;
+}
+
+blockquote > .hover::before {
+    content: " ";
+    position: absolute;
+    top: -40px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent #000 transparent;
 }
