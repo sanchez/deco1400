@@ -146,15 +146,18 @@ blockquote {
     left: 0% !important;
 }
 
-.floatingMenu a {
-    display: block;
+.floatingMenu a, .card a {
     color: var(--primary);
     font-size: 1.3rem;
     padding: 0.4rem;
     text-decoration: none;
 }
 
-.floatingMenu a:hover {
+.floatingMenu a {
+    display: block;
+}
+
+.floatingMenu a:hover, .card a {
     text-decoration: underline;
 }
 
