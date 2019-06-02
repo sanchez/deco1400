@@ -120,6 +120,11 @@ blockquote {
     align-content: flex-start;
 }
 
+@keyframes bouncingleft {
+    from { left: -90% }
+    to { left: -92% }
+}
+
 .floatingMenu > .innerFloat {
     pointer-events: all;
     background-color: rgba(255, 255, 255, 1);
@@ -132,10 +137,12 @@ blockquote {
     position: relative;
     left: -92%;
     transition: left 1s ease;
+    animation: bouncingleft 0.5s ease infinite alternate;
 }
 
 .floatingMenu > .innerFloat:hover {
-    left: 0%;
+    animation: initial;
+    left: 0% !important;
 }
 
 .floatingMenu a {
