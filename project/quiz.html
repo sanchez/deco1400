@@ -26,7 +26,7 @@
     </head>
 
     <body>
-        <div id="container">
+        <main id="container">
 
             <nav class="main">
                 <div class="innerNav">
@@ -45,8 +45,17 @@
 
             <div class="page-spacing"></div>
 
+            <noscript>
+                <section class="card">
+                    <h1>JavaScript Requirement</h1>
+                    <div class="content">
+                        These questions are heavily reliant on modern JavaScript and therefore functionality may be limited if these requirements are not meant
+                    </div>
+                </section>
+            </noscript>
+
             <section class="card">
-                <div class="heading">Question 1</div>
+                <h1>Question 1</h1>
                 <div class="content">
                     What is Git used for?
                     <ul class="multichoice" id="git">
@@ -59,7 +68,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 2</div>
+                <h1>Question 2</h1>
                 <div class="content">
                     When starting a new Repository what is one of the first things you should do?
                     <ul class="multichoice" id="start">
@@ -71,7 +80,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 3</div>
+                <h1>Question 3</h1>
                 <div class="content">
                     Before commiting your changes, do you have to add the files to the staging area first?
                     <ul class="multichoice" id="first">
@@ -83,7 +92,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 4</div>
+                <h1>Question 4</h1>
                 <div class="content">
                     If I want to add all the changed files, do I have to type out their name individually?
                     <ul class="multichoice" id="add">
@@ -95,7 +104,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 5</div>
+                <h1>Question 5</h1>
                 <div class="content">
                     What is "<code>git push</code>" used for?
                     <ul class="multichoice" id="push">
@@ -107,7 +116,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 6</div>
+                <h1>Question 6</h1>
                 <div class="content">
                     Create a repository and a commit:
                     <div class="terminal" id="commit">
@@ -117,7 +126,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 7</div>
+                <h1>Question 7</h1>
                 <div class="content">
                     Create a new branch with one commit
                     <div class="terminal" id="branch">
@@ -127,7 +136,7 @@
             </section>
 
             <section class="card">
-                <div class="heading">Question 8</div>
+                <h1>Question 8</h1>
                 <div class="content">
                     What is the Git command to copy an existing repository from a server:
                     <ul class="multichoice" id="clone">
@@ -140,14 +149,14 @@
             </section>
 
             <section class="card">
-                <div class="heading">Results</div>
+                <h1>Results</h1>
                 <div class="content">
                     <button id="checkResults" onclick="window.checkFields">Check Questions</button>
 
                     <div id="results"></div>
                 </div>
             </section>
-        </div>
+        </main>
 
         <script type="text/javascript" src="scripts/fields.js"></script>
         <script type="text/javascript" src="scripts/terminal.js"></script>

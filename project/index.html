@@ -6,7 +6,7 @@
 
         <style>
             :root {
-                --primary: #a16813;
+                --primary: #a18613;
                 --primary-text: #eee;
                 --secondary: #1975FF;
                 --background-color: #6d532d;
@@ -21,11 +21,8 @@
         <link href="styles/card.css" rel="stylesheet" />
     </head>
     <body>
-        <!-- https://www.deviantart.com/popular-all-time/?section=&global=1&q=indiana+jones -->
-        <!-- https://www.vecteezy.com/free-vector/indiana-jones -->
-
         <div class="floatingMenu">
-            <div class="innerFloat">
+            <nav class="innerFloat">
                 <a href="#front-screen">Home Page</a>
                 <a href="#beginning">Beginning</a>
                 <a href="#opening">Getting Started</a>
@@ -36,10 +33,10 @@
                 <a href="#merging">Merging</a>
                 <a href="#log">History</a>
                 <a href="#ending">Finale</a>
-            </div>
+            </nav>
         </div>
 
-        <div id="contain">
+        <main id="contain">
 
             <nav class="main">
                 <div class="innerNav">
@@ -68,26 +65,26 @@
 
             <div class="page" id="beginning">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">In the beginning...</div>
+                    <section class="card">
+                        <h1>In the beginning...</h1>
                         <div class="content">
                             The great ancients of software set out to create a way to track all the changes they made to software. Born was the Scroll of Lost Truthes, the single source of truth for everything ever. This much knowledge became difficult for anyone to control, to the ancients locked it away deep inside traversing and winding tunnels. The hope being one day someone would be able to find it and bring truth back to the world.
                         </div>
-                    </div>
+                    </section>
                     <div class="fillOut"></div>
-                    <div class="card">
-                        <div class="heading">Enter The Hero</div>
+                    <section class="card">
+                        <h1>Enter The Hero</h1>
                         <div class="content">
                             Indiana Jones heard the rumors of the ancient scroll and he wanted to unlock the power of the scroll for himself. But he cannot complete this quest without some help!
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="opening">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">Getting Started</div>
+                    <section class="card">
+                        <h1>Getting Started</h1>
                         <div class="content">
                             Arriving at the rumored site of the Scroll of Lost Truthes. Indiana needed to make a haste start, so to begin he lined out all of his tools and fired up git. In order to begin using git, you must first run the initialize command in the folder you want to track. Like so:
 
@@ -95,14 +92,14 @@
                                 git init
                             </blockquote>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="adding">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">Begin Tracking</div>
+                    <section class="card">
+                        <h1>Begin Tracking</h1>
                         <div class="content">
                             Embarking on his mission, Indiana soon realised that he needed to track his steps otherwise he will get lost in the depths of the caves. Indiana also wants to make sure he can attach a message to the log to make sure he can quickly and easily reflect back on his decisions and why he did it. In order to track your changes in Git, you must first add the files using:
                             
@@ -126,14 +123,14 @@
 
                             <i>Do not forget to replace &lt;Your Message Here&gt; with the message you want to associate with the changes</i><br />
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="publishing">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">Getting Updates</div>
+                    <section class="card">
+                        <h1>Getting Updates</h1>
                         <div class="content">
                             Now that Indiana has begun to start recording updates he thought it best to make sure he retrieves updates incase anyone else (such as ourselves) have made changes to the history.
 
@@ -145,10 +142,10 @@
                                 git pull
                             </blockquote>
                         </div>
-                    </div>
+                    </section>
                     <div style="padding: 50px"></div>
-                    <div class="card">
-                        <div class="heading">Posting Updates</div>
+                    <section class="card">
+                        <h1>Posting Updates</h1>
                         <div class="content">
                             While it is important to fetch updates for our own use, we also need to push updates to the remote storage location so that our data is backed up and other people can access the information if required.
 
@@ -160,14 +157,14 @@
                                 git push
                             </blockquote>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="branching">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">A Branch in the Path</div>
+                    <section class="card">
+                        <h1>A Branch in the Path</h1>
                         <div class="content">
                             Indiana had been progressing very smoothly through the tunnels so far, however he had arrived at his first problem. The tunnel branched off in two directions, but he was unsure if he should continue ahead and ignore the path off to the side. Or see where the side path went to. Indiana decided to explore the path down the side, but he also wanted to correctly document his movements. So he ran the following command:
 
@@ -177,23 +174,23 @@
 
                             <i>Do not forget to replace &lt;branchName&gt; with the name of the branch you want to create</i><br /><br />
                         </div>
-                    </div>
+                    </section>
 
                     <div class="fillOut"></div>
 
-                    <div class="card">
-                        <div class="heading">What is the importance of Branching</div>
+                    <section class="card">
+                        <h1>What is the importance of Branching</h1>
                         <div class="content">
                             Branching is important in version control because it allows for multiple developers to easily develop on different features and not interupt each others development time. Branching can also be used mark different features being developed and mark different stages of the program.
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="checkout">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">Moving between Branches</div>
+                    <section class="card">
+                        <h1>Moving between Branches</h1>
                         <div class="content">
                             Indiana had been well on his way through this tunnel when he finally hit a dead end and decided he wanted to jump to another branch. He rememered that the previous branch he was working on was called master, and so he was able to jump back using the <code>checkout</code> command.
                             <blockquote>
@@ -201,24 +198,24 @@
                             </blockquote>
                             <i>Do not forget to replace &lt;branchName&gt; with your branch name!</i>
                         </div>
-                    </div>
+                    </section>
                     <div class="fillOut"></div>
-                    <div class="card">
-                        <div class="heading">View Existing Branches</div>
+                    <section class="card">
+                        <h1>View Existing Branches</h1>
                         <div class="content">
                             It can become incredibly difficult to keep track of branches and remember what exists and doesn't. Git allows you to view all the branches created and view the last commit message assocated with the branch.
                             <blockquote>
                                 git branch -vv
                             </blockquote>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="merging">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">Merging Code</div>
+                    <section class="card">
+                        <h1>Merging Code</h1>
                         <div class="content">
                             Most of the time after completing work in a branch, the code needs to be "moved" into another branch. Git allows us to do this using the <code>merge</code> command.
                             <blockquote>
@@ -233,14 +230,14 @@
                             </blockquote>
                             This will attempt to merge <i>&lt;destBranchName&gt;</i> into <i>&lt;srcBranchName&gt;</i>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="log">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">Git History</div>
+                    <section class="card">
+                        <h1>Git History</h1>
                         <div class="content">
                             After exploring the tunnels for days Indiana had started to become lost in his own work. His memory of what he had done and when was starting to slip from memory. At this point he remembered that Git stored all the commits he had made and there is one simple command for viewing the history:
 
@@ -256,25 +253,25 @@
                                 </blockquote>
                             </p>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="page" id="ending">
                 <div class="innerPage">
-                    <div class="card">
-                        <div class="heading">The Finale</div>
+                    <section class="card">
+                        <h1>The Finale</h1>
                         <div class="content">
                             Indiana Jones turned around the final fork in the tunnel, and there in front of him glew the Scroll. A bright blinding color, Indiana could feel the knowledge and truth radiating out. Looking back he thought of how he had learnt the importance of using a good version control system (like Git). Now Indiana Jones, with your help was able to bring the truth to the rest of the world.
                         </div>
-                    </div>
+                    </section>
                     <div class="fillOut"></div>
-                    <div class="card">
-                        <div class="heading">Ready for more?</div>
+                    <section class="card">
+                        <h1>Ready for more?</h1>
                         <div class="content">
                             Now that you have learnt all the basics, it is time to put your knowledge to the test. Hard over to the <a href="quiz.html">Quiz Page</a> to test your new knowledge. After that if there are still more you want to learn, the <a href="refs.html">References Page</a> contains a quick summary of all the commands covered here and more!
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
@@ -299,7 +296,7 @@
                 </div>
             </footer>
 
-        </div>
+        </main>
 
         <script type="text/javascript" src="scripts/blockquote.js"></script>
     </body>

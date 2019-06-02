@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+.option + .option {
+    margin-top: 10px;
+}
+
 .option::before {
     content: " ";
     width: 25px;
