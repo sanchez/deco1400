@@ -39,6 +39,25 @@
     text-align: center;
     font-size: 1.3rem;
     padding: 0rem !important;
+    position: relative;
+}
+
+@keyframes bouncingdown {
+    from { bottom: 10px }
+    to { bottom: 20px }
+}
+
+#front-screen::after {
+    font-family: cursive;
+    content: "v";
+    display: block;
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    font-size: 50px;
+    font-weight: bolder;
+    animation: bouncingdown 0.5s ease infinite alternate;
 }
 
 .floater {
