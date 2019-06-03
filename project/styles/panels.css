@@ -47,9 +47,8 @@
     to { bottom: 20px }
 }
 
-#front-screen::after {
+#front-screen > #begin-scrolling {
     font-family: cursive;
-    content: "v";
     display: block;
     color: #fff;
     position: absolute;
@@ -58,6 +57,7 @@
     font-size: 50px;
     font-weight: bolder;
     animation: bouncingdown 0.5s ease infinite alternate;
+    cursor: pointer;
 }
 
 .floater {
