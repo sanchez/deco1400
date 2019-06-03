@@ -42,6 +42,21 @@
     position: relative;
 }
 
+#beginning {
+    position: relative;
+}
+
+#beginning * {
+    z-index: 5;
+}
+
+#beginning > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
 @keyframes bouncingdown {
     from { bottom: 10px }
     to { bottom: 20px }
