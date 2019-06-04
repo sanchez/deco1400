@@ -4,60 +4,36 @@ camera.position.z = 5;
 camera.lookAt(new THREE.Vector3());
 camera.position.y = 2;
 const renderer = new THREE.WebGLRenderer();
+const clock = new THREE.Clock();
+let ticks = 0;
 
-let particles = [];
-
-class Particle {
-    constructor() {
-        this.lifeTime = Math.floor(Math.random() * 70);
-
-        this.dot = new THREE.Mesh(new THREE.SphereGeometry(0.2, 32, 32), new THREE.MeshBasicMaterial({ color: 0xffcccc }));
-        scene.add(this.dot);
-        const flatSpeed = 1.5;
-        const x = Math.random() * flatSpeed - (flatSpeed / 2);
-        const z = Math.random() * flatSpeed - (flatSpeed / 2);
-        this.projection = new THREE.Vector3(x / 10, 0.1, z / 10);
-    }
-
-    init() {
-        this.lifeTime = Math.floor(Math.random() * 70);
-
-        const flatSpeed = 1.5;
-        const x = Math.random() * flatSpeed - (flatSpeed / 2);
-        const z = Math.random() * flatSpeed - (flatSpeed / 2);
-        this.projection = new THREE.Vector3(x / 10, 0.1, z / 10);
-        this.dot.position.set(0, 0, 0);
-    }
-
-    isAlive() {
-        return this.lifeTime > 0;
-    }
-
-    render() {
-        if (this.lifeTime === 0) return;
-        this.dot.position.add(this.projection);
-        this.lifeTime--;
-    }
-}
-
-function addParticle() {
-    const p = new Particle();
-    particles.push(p);
-}
-
-function renderParticles() {
-    for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        if (p.isAlive()) {
-            p.render();
-        } else {
-            p.init();
-        }
-    }
-}
+const particleSystem = new THREE.GPUParticleSystem({
+    maxParticles: 250000
+});
+scene.add(particleSystem);
 
 function animate() {
-    renderParticles();
+    const delta = clock.getDelta();
+    ticks += delta / 3;
+    
+    if (delta > 0) {
+        for (let i = 0; i < delta * 15000; i++) {
+            particleSystem.spawnParticle({
+                position: new THREE.Vector3(),
+                positionRandomness: 0.3,
+                velocity: new THREE.Vector3(0, 1, 0),
+                velocityRandomness: 0.5,
+                color: 0xff88aa,
+                colorRandomness: 0.2,
+                turbulence: 0.3,
+                lifetime: 2,
+                size: 5,
+                sizeRandomness: 1,
+            });
+        }
+    }
+
+    particleSystem.update(ticks);
 
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
@@ -77,21 +53,17 @@ function loadFlame() {
     renderer.setSize(parentElement.clientWidth, parentElement.clientHeight);
     parentElement.replaceChild(renderer.domElement, flameElement);
 
-    const center = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 10, 32), new THREE.MeshPhongMaterial({ color: 0x8B4513 }));
-    center.position.y = -5;
+    const center = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 2, 32), new THREE.MeshPhongMaterial({ color: 0x8B4513 }));
+    center.position.y = -1;
     scene.add(center);
 
-    const base = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshBasicMaterial({ color: 0xff3333 }));
+    const base = new THREE.Mesh(new THREE.SphereGeometry(0.2, 32, 32), new THREE.MeshPhongMaterial({ color: 0xff3333 }));
     scene.add(base);
 
     const light = new THREE.PointLight(0xffffff, 3, 100);
     light.position.y = 3;
     light.position.z = 4;
     scene.add(light);
-
-    for (let i = 0; i < 1000; i++) {
-        addParticle();
-    }
 
     animate();
 }
