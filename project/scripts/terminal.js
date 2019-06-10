@@ -242,7 +242,7 @@ function processCommand(command, repo) {
         case "help":
             return help(s.filter((x, i) => i >= 2));
     }
-    throw new Error("Commant Not Found");
+    throw new Error("Command Not Found");
 }
 
 class TerminalInput {

@@ -6,6 +6,7 @@ camera.position.y = 2;
 const renderer = new THREE.WebGLRenderer();
 const clock = new THREE.Clock();
 let ticks = 0;
+let lastScroll = 0;
 
 const particleSystem = new THREE.GPUParticleSystem({
     maxParticles: 250000
@@ -15,6 +16,9 @@ scene.add(particleSystem);
 function animate() {
     const delta = clock.getDelta();
     ticks += delta / 3;
+
+    const scrollDelta = Math.abs(lastScroll - window.pageYOffset);
+    lastScroll = window.pageYOffset;
     
     if (delta > 0) {
         for (let i = 0; i < delta * 15000; i++) {
@@ -22,7 +26,7 @@ function animate() {
                 position: new THREE.Vector3(),
                 positionRandomness: 0.3,
                 velocity: new THREE.Vector3(0, 1, 0),
-                velocityRandomness: 0.5,
+                velocityRandomness: (scrollDelta / 10) + 0.5,
                 color: 0xff88aa,
                 colorRandomness: 0.2,
                 turbulence: 0.3,
