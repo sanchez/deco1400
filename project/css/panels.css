@@ -1,0 +1,103 @@
+#front-screen, #opening, #adding, #branching, #checkout, #merging, #log, #ending {
+    background-color: lightgoldenrodyellow;
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 40%;
+}
+
+#opening {
+    background-image: url("../images/opening.jpg");
+}
+
+#adding {
+    background-image: url("../images/adding.jpg");
+}
+
+#branching {
+    background-image: url("../images/branch.jpg");
+}
+
+#checkout {
+    background-image: url("../images/deadend.jpg");
+}
+
+#merging {
+    background-image: url("../images/massive.jpg");
+}
+
+#log {
+    background-image: url("../images/water.jpg");
+}
+
+#ending {
+    background-image: url("../images/ending.jpg");
+}
+
+#front-screen {
+    background-image: url("../images/cover.jpg");
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0rem !important;
+    position: relative;
+}
+
+#beginning {
+    position: relative;
+}
+
+#beginning * {
+    z-index: 5;
+}
+
+#beginning > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@keyframes bouncingdown {
+    from { bottom: 10px }
+    to { bottom: 20px }
+}
+
+#front-screen > #begin-scrolling {
+    font-family: cursive;
+    display: block;
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    font-size: 50px;
+    font-weight: bolder;
+    animation: bouncingdown 0.5s ease infinite alternate;
+    cursor: pointer;
+}
+
+.floater {
+    background-color: rgba(255, 244, 227, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 20px rgba(255, 244, 227, 0.8);
+}
+
+footer {
+    padding: 2rem;
+    background-color: var(--primary);
+    color: var(--primary-text);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+footer a {
+    color: var(--primary-text);
+}
+
+footer a.right {
+    flex-shrink: 0;
+}
